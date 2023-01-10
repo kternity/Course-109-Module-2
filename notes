@@ -1,0 +1,6 @@
+git init (initialize the repository)
+git remote add origin <URL> (add the remote url)
+git add . 
+git commit -m "Message" (creates local copy / must put message)
+git push -u origin master (Only for the first push)
+git push (push going forward)
