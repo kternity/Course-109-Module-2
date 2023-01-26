@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const catalog = [
    {
       title: "Feet",
@@ -10,32 +12,38 @@ const catalog = [
       Price: 49.99,
       category: "Fruit",
       image: "2.jpg",
-   },{
+   },
+   {
       title: "Coffee Beans",
       Price: 59.99,
       category: "Fruit",
       image: "3.jpg",
-   },{
+   },
+   {
       title: "Submerge",
       Price: 36.99,
       category: "Fruit",
       image: "4.jpg",
-   },{
+   },
+   {
       title: "Fog",
       Price: 39.99,
       category: "Fruit",
       image: "5.jpg",
-   },{
+   },
+   {
       title: "Autumn",
       Price: 55.99,
       category: "Fruit",
       image: "6.jpg",
-   },{
+   },
+   {
       title: "Sunset",
       Price: 89.99,
       category: "Fruit",
       image: "7.jpg",
-   },{
+   },
+   {
       title: "Green",
       Price: 39.99,
       category: "Fruit",
@@ -44,9 +52,11 @@ const catalog = [
 ];
 
 class DataService {
-   getCatalog() {
-      //Todo: should connect to server and get the catalog from server
-      return catalog;
+   async getCatalog() {
+      let response = await axios.get("http://127.0.0.1:5000/api/catalog");
+
+      console.log(response);
+      return response.data;
    }
 }
-export default DataService; 
+export default DataService;
